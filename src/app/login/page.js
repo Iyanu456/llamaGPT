@@ -1,4 +1,5 @@
-import HankoAuth from "../components/HankoAuth";
+import dynamic from "next/dynamic";
+const HankoAuth = dynamic(() => import("../components/HankoAuth"))
 import { Hanko } from "@teamhanko/hanko-elements";
 import "custom-event-polyfill"
 
