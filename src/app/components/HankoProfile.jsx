@@ -1,5 +1,5 @@
 "use client";
-
+import "custom-event-polyfill"
 import { useEffect } from "react";
 import { register } from "@teamhanko/hanko-elements";
 

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Hanko } from "@teamhanko/hanko-elements";
+import "custom-event-polyfill"
 
 const hankoApi = `https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io`;
 
