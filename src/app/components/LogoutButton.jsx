@@ -11,7 +11,7 @@ export function LogoutBtn() {
   const [hanko, setHanko] = useState();
  
   useEffect(() => {
-    import("@teamhanko/hanko-elements").then(({ Hanko }) =>
+    import("@teamhanko/hanko-frontend-sdk").then(({ Hanko }) =>
       setHanko(new Hanko(hankoApi ?? ""))
     );
   }, []);
