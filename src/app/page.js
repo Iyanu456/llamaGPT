@@ -1,4 +1,6 @@
 import Image from 'next/image'
+import "custom-event-polyfill"
+
 
 export default function Home() {
   return (
