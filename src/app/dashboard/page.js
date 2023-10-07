@@ -1,3 +1,4 @@
+"use client"
 import dynamic from "next/dynamic";
 const HankoProfile = dynamic(() => import("../components/HankoProfile"));
 import { LogoutBtn } from "../components/LogoutButton"

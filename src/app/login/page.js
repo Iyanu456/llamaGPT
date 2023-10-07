@@ -1,3 +1,4 @@
+"use client"
 import dynamic from "next/dynamic";
 const HankoAuth = dynamic(() => import("../components/HankoAuth"))
 import { Hanko } from "@teamhanko/hanko-elements";

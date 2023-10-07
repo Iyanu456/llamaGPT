@@ -1,5 +1,5 @@
 "use client"
-
+import dynamic from "next/dynamic";
 import { useEffect } from "react";
 import { register } from "@teamhanko/hanko-elements";
 
