@@ -1,4 +1,5 @@
 import HankoAuth from "../components/HankoAuth";
+import { Hanko } from "@teamhanko/hanko-elements";
 import "custom-event-polyfill"
 
 export default function LoginPage() {
