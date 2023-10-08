@@ -1,32 +1,40 @@
-"use client";
-
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { Hanko } from "@teamhanko/hanko-elements";
-import "custom-event-polyfill"
+import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
+
+const Hanko = dynamic(() => import("@teamhanko/hanko-elements"), { ssr: false });
 
 const hankoApi = `https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io`;
 
 export default function HankoAuth() {
   const router = useRouter();
-  const [hanko, setHanko] = useState();
+  const [hanko, setHanko] = useState(null);
 
   useEffect(() => {
-    import("@teamhanko/hanko-frontend-sdk").then(({ Hanko }) => {
-      setHanko(new Hanko(hankoApi ?? ""));
-    });
+    import("@teamhanko/hanko-elements")
+      .then(({ Hanko }) => {
+        setHanko(new Hanko(hankoApi));
+      })
+      .catch((error) => {
+        console.error("Error importing Hanko:", error);
+      });
   }, []);
 
   const logout = async () => {
     try {
-      await hanko?.user.logout();
+      if (hanko) {
+        await hanko.user.logout();
+      }
       router.push("/login");
-      router.refresh();
-      return;
     } catch (error) {
       console.error("Error during logout:", error);
     }
   };
 
-  return <button onClick={logout}>Logout</button>;
+  return (
+    <div>
+      <h1>Welcome to HankoAuth</h1>
+      <button onClick={logout}>Logout</button>
+    </div>
+  );
 }
