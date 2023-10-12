@@ -36,7 +36,8 @@ export const config = {
   },
 };
 
-export default async function handler(req) {
+export default async function handler(req, res) {
+  // Apply the CORS middleware
   const corsResponse = await middleware(req);
 
   // Check if the response is provided by the CORS middleware
@@ -44,10 +45,7 @@ export default async function handler(req) {
     return NextResponse.serve(req, corsResponse);
   }
 
-  // Your API route logic here
-  // pages/api/simple-post.js
-
-export default async (req, res) => {
+  // Your existing endpoint logic
   if (req.method === 'POST') {
     try {
       // Assuming you want to parse the JSON data from the request body
@@ -66,10 +64,4 @@ export default async (req, res) => {
     // Handle requests other than POST (e.g., GET)
     res.status(405).json({ error: 'Method not allowed' });
   }
-};
-
-  return {
-    status: 200,
-    body: { message: "This is your API response." },
-  };
 }
