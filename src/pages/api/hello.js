@@ -2,12 +2,12 @@ import { NextResponse } from "next/server";
 
 // CORS Configuration
 const corsOptions = {
-  allowedMethods: ["GET", "POST"], // Add allowed HTTP methods
-  allowedOrigins: ["*"], // Add allowed origins (use "*" for any origin)
+  allowedMethods: ["GET", "POST", "OPTIONS"], // Add allowed HTTP methods
+  allowedOrigins: ["http://localhost:3000"], // Add allowed origins (use "*" for any origin)
   allowedHeaders: ["Content-Type"], // Add allowed headers
   exposedHeaders: [], // Add exposed headers if needed
   maxAge: undefined, // Max age in seconds, set to undefined for no max age
-  credentials: false, // Set to true if you want to allow credentials (e.g., cookies)
+  credentials: true, // Set to true if you want to allow credentials (e.g., cookies)
 };
 
 // CORS Middleware
