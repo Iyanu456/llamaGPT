@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextApiRequest, NextApiResponse } from "next";
 
 // CORS Configuration
 const corsOptions = {
@@ -10,41 +10,20 @@ const corsOptions = {
   credentials: true, // Set to true if you want to allow credentials (e.g., cookies)
 };
 
-// CORS Middleware
-export async function middleware(request) {
-  const response = NextResponse.next();
-
+export default async function handler(req, res) {
   // Allowed origins check
-  const origin = request.headers.origin || '*';
-  
+  const origin = req.headers.origin || '*';
+
   if (corsOptions.allowedOrigins.includes('*') || corsOptions.allowedOrigins.includes(origin)) {
-    response.headers.set('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Origin', origin);
   }
 
   // Set default CORS headers
-  response.headers.set("Access-Control-Allow-Credentials", corsOptions.credentials.toString());
-  response.headers.set("Access-Control-Allow-Methods", corsOptions.allowedMethods.join(","));
-  response.headers.set("Access-Control-Allow-Headers", corsOptions.allowedHeaders.join(","));
-  response.headers.set("Access-Control-Expose-Headers", corsOptions.exposedHeaders.join(","));
-  response.headers.set("Access-Control-Max-Age", corsOptions.maxAge?.toString() || "");
-
-  return response;
-}
-
-export const config = {
-  api: {
-    bodyParser: false, // Disable body parsing, as it's not needed for CORS
-  },
-};
-
-export default async function handler(req, res) {
-  // Apply the CORS middleware
-  const corsResponse = await middleware(req);
-
-  // Check if the response is provided by the CORS middleware
-  if (NextResponse.hasNext(corsResponse)) {
-    return NextResponse.serve(req, corsResponse);
-  }
+  res.setHeader("Access-Control-Allow-Credentials", corsOptions.credentials.toString());
+  res.setHeader("Access-Control-Allow-Methods", corsOptions.allowedMethods.join(","));
+  res.setHeader("Access-Control-Allow-Headers", corsOptions.allowedHeaders.join(","));
+  res.setHeader("Access-Control-Expose-Headers", corsOptions.exposedHeaders.join(","));
+  res.setHeader("Access-Control-Max-Age", corsOptions.maxAge?.toString() || "");
 
   // Check the request method
   if (req.method === 'POST') {
