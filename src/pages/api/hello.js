@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     return NextResponse.serve(req, corsResponse);
   }
 
-  // Your existing endpoint logic
+  // Check the request method
   if (req.method === 'POST') {
     try {
       // Assuming you want to parse the JSON data from the request body
