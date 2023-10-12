@@ -1,4 +1,51 @@
-// pages/api/simple-post.js
+import { NextResponse } from "next/server";
+
+// CORS Configuration
+const corsOptions = {
+  allowedMethods: ["GET", "POST"], // Add allowed HTTP methods
+  allowedOrigins: ["*"], // Add allowed origins (use "*" for any origin)
+  allowedHeaders: ["Content-Type"], // Add allowed headers
+  exposedHeaders: [], // Add exposed headers if needed
+  maxAge: undefined, // Max age in seconds, set to undefined for no max age
+  credentials: false, // Set to true if you want to allow credentials (e.g., cookies)
+};
+
+// CORS Middleware
+export async function middleware(request) {
+  const response = NextResponse.next();
+
+  // Allowed origins check
+  const origin = request.headers.get('origin') || '';
+  if (corsOptions.allowedOrigins.includes('*') || corsOptions.allowedOrigins.includes(origin)) {
+    response.headers.set('Access-Control-Allow-Origin', origin);
+  }
+
+  // Set default CORS headers
+  response.headers.set("Access-Control-Allow-Credentials", corsOptions.credentials.toString());
+  response.headers.set("Access-Control-Allow-Methods", corsOptions.allowedMethods.join(","));
+  response.headers.set("Access-Control-Allow-Headers", corsOptions.allowedHeaders.join(","));
+  response.headers.set("Access-Control-Expose-Headers", corsOptions.exposedHeaders.join(","));
+  response.headers.set("Access-Control-Max-Age", corsOptions.maxAge?.toString() || "");
+
+  return response;
+}
+
+export const config = {
+  api: {
+    bodyParser: false, // Disable body parsing, as it's not needed for CORS
+  },
+};
+
+export default async function handler(req) {
+  const corsResponse = await middleware(req);
+
+  // Check if the response is provided by the CORS middleware
+  if (NextResponse.hasNext(corsResponse)) {
+    return NextResponse.serve(req, corsResponse);
+  }
+
+  // Your API route logic here
+  // pages/api/simple-post.js
 
 export default async (req, res) => {
   if (req.method === 'POST') {
@@ -20,3 +67,9 @@ export default async (req, res) => {
     res.status(405).json({ error: 'Method not allowed' });
   }
 };
+
+  return {
+    status: 200,
+    body: { message: "This is your API response." },
+  };
+}
