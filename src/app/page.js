@@ -1,4 +1,4 @@
-import Image from 'next/image'
+port Image from 'next/image'
 import "custom-event-polyfill"
 
 

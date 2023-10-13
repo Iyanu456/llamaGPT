@@ -1,30 +1,13 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import NextCors from "nextjs-cors"
 
-// CORS Configuration
-const corsOptions = {
-  allowedMethods: ["GET", "POST", "OPTIONS"], // Add allowed HTTP methods
-  allowedOrigins: ["http://localhost:3000"], // Add allowed origins (use "*" for any origin)
-  allowedHeaders: ["Content-Type"], // Add allowed headers
-  exposedHeaders: [], // Add exposed headers if needed
-  maxAge: undefined, // Max age in seconds, set to undefined for no max age
-  credentials: true, // Set to true if you want to allow credentials (e.g., cookies)
-};
 
 export default async function handler(req, res) {
-  // Allowed origins check
-  const origin = req.headers.origin || '*';
-
-  if (corsOptions.allowedOrigins.includes('*') || corsOptions.allowedOrigins.includes(origin)) {
-    res.setHeader('Access-Control-Allow-Origin', origin);
-  }
-
-  // Set default CORS headers
-  res.setHeader("Access-Control-Allow-Credentials", corsOptions.credentials.toString());
-  res.setHeader("Access-Control-Allow-Methods", corsOptions.allowedMethods.join(","));
-  res.setHeader("Access-Control-Allow-Headers", corsOptions.allowedHeaders.join(","));
-  res.setHeader("Access-Control-Expose-Headers", corsOptions.exposedHeaders.join(","));
-  res.setHeader("Access-Control-Max-Age", corsOptions.maxAge?.toString() || "");
-
+  await NextCors(req, res, {
+    methods: ["POST", "GET", "OPTIONS"],
+    origin: "*",
+    optionsSuccessStatus: 200,
+  })  ;
   // Check the request method
   if (req.method === 'POST') {
     try {
