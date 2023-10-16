@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+	--color-grey: rgb(252, 252, 252);
 }
 
 
@@ -83,13 +84,19 @@ hanko-auth::part(form-item){
 }
 
 header {
-    background-color: blue;
+    background-color: var(color-grey);
+    border-bottom: 1.5px solid grey;
 }
 aside {
     background-color: red;
 }
 .input-container {
-    background-color: yellow;
+    background-color: var(color-grey);
+    border-top: 1.5px solid grey
+}
+
+.input-container > form > input {
+	padding: 0.6em 1.2em;
 }
 
 @media only screen and (max-width: 600px) {
