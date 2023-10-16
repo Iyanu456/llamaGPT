@@ -11,7 +11,7 @@ export default function Home() {
             <header className="z-20 max-sm:left-0 fixed top-0 right-0 left-[16em] bottom-[auto] px-3 py-[1.4em] grid place-items-center">
                 <div>App Logo</div>
             </header>
-            <div class="z-0 px-2 my-[3.9em] chat-container">example</div>
+            <div class="z-0 chat-container">example</div>
             <div class="z-20 grid place-items-center fixed top-[auto] bottom-0 right-0 max-sm:left-0 left-[16em] input-container py-[1.6em]">
 	  <form className="flex gap-3"><input/><button>submit</button></form></div>
         </main>
