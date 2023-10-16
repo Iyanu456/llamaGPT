@@ -108,7 +108,6 @@ aside {
 .chat-container {
 	margin-top: 4em;
 	padding-top: 2em;
-	overflow-y: scroll;
 }
 
 @media only screen and (max-width: 600px) {
