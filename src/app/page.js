@@ -8,10 +8,10 @@ export default function Home() {
   const [banner, setBanner] = useState(true);
 
   return (
-    <div className="relative main-container w-[100%] h-screen">
+    <div className="relative main-container w-[100%] h-[100lvh]">
         <aside></aside>
         <main>
-            <header className="px-3 py-[1.4em] grid place-items-center">
+            <header className="grid place-items-center">
                 <div>App Logo</div>
             </header>
             <div class="chat-container">
@@ -22,7 +22,7 @@ export default function Home() {
 	  	</div>
 	</div>}
 	  </div>
-            <div class="grid place-items-center input-container py-[1.6em]">
+            <div class="grid place-items-center input-container">
 	  <form className="flex gap-3" onSubmit={(e) => {
 		  e.preventDefault()
 		  !banner ? null : setBanner(false)
