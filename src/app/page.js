@@ -14,7 +14,7 @@ export default function Home() {
             <header className="z-20 max-sm:left-0 fixed top-0 right-0 left-[16em] bottom-[auto] px-3 py-[1.4em] grid place-items-center">
                 <div>App Logo</div>
             </header>
-            <div class="relative top-[4em] z-0 chat-container">
+            <div class="h-[70vh] z-0 chat-container">
 	  {banner && <div>
 		  <h2><b>LlamaGPT</b></h2>
 	  	<div className="example-container">
