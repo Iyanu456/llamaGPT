@@ -2,35 +2,48 @@
 export const dynamic = "force-dynamic";
 import { useState } from "react";
 import Image from "next/image"
+import MaxHeightTextarea from './components/Textarea';
+
 
 
 export default function Home() {
   const [banner, setBanner] = useState(true);
 
   return (
-    <div className="relative main-container w-[100vw] max-h-full">
-        <aside></aside>
-        <main>
-            <header className="grid place-items-center">
-                <div>App Logo</div>
-            </header>
-            <div class="chat-container">
-	  {banner && <div>
-		  <h2><b>LlamaGPT</b></h2>
-	  	<div className="example-container">
-	  		<div>Example</div>
-	  	</div>
-	</div>}
-	  </div>
-            <div class="grid place-items-center input-container">
-	  <form className="flex gap-3" onSubmit={(e) => {
-		  e.preventDefault()
-		  !banner ? null : setBanner(false)
-	  }}>
-	  	<input/><button>submit</button>
-	  </form></div>
+  	<>
+	    <div className="relative top-0 bottom-0 w-[100%] h-[100svh] main-container web">
+	        <aside className="px-[1.5em] py-[2em]">
+	            <div className="pl-[1.6em]"></div>
+	        </aside>
+	        <main className="relative">
+	            <div className="grid w-[100%] pt-[10em]">
+	                <header className="w-[100%] fixed top-0 bottom-auto right-0 left-[18em] h-[3em]">
+	                </header>
+	                
+	                <div class="chat-grp">
+	               </div>
+	            </div>
+	        </main>
+	        <nav className="absolute grid place-items-center top-auto bottom-0 right-0 left-[18em] h-[6.4em]">
+	        	<MaxHeightTextarea />
+	        </nav>
+	    </div>
+	    
+	    <div class="mobile-main-container mobile" >
+        <header>
+            <h3>Finsocial</h3>
+        </header>
+        <main class="main-mobile">
+            <div>
+                <div class="post-grp"></div>
+            </div>
         </main>
-	  </div>
+        <nav>
+        	<MaxHeightTextarea />
+        </nav>
+    </div>
+    </>
+
   )
 }
 
