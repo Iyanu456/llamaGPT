@@ -84,19 +84,24 @@ hanko-auth::part(form-item){
 }
 
 header {
-    background-color: var(color-grey);
+    background: var(color-grey);
     border-bottom: 1.5px solid grey;
 }
 aside {
-    background-color: red;
+    background: red;
 }
 .input-container {
-    background-color: var(color-grey);
-    border-top: 1.5px solid grey
+    background: var(color-grey);
+    border-top: 1.5px solid grey;
+    z-index: 20;
 }
 
 .input-container > form > input {
 	padding: 0.6em 1.2em;
+}
+
+.chat-container {
+	overflow-y: scroll;
 }
 
 @media only screen and (max-width: 600px) {
