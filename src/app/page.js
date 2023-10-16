@@ -8,7 +8,7 @@ export default function Home() {
   const [banner, setBanner] = useState(true);
 
   return (
-    <div className="relative main-container w-[100%] h-[100lvh]">
+    <div className="relative main-container w-[100vw] max-h-full">
         <aside></aside>
         <main>
             <header className="grid place-items-center">
