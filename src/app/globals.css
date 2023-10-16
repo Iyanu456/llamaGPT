@@ -76,3 +76,18 @@ hanko-auth::part(container) {
 hanko-auth::part(form-item){
   display: none;
 }
+
+.main-container{
+    display: grid;
+    grid-template-columns: 16em auto;
+}
+
+header {
+    background-color: blue;
+}
+aside {
+    background-color: white;
+}
+.input-container {
+    background-color: purple;
+}
