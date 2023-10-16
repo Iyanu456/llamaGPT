@@ -91,3 +91,9 @@ aside {
 .input-container {
     background-color: yellow;
 }
+
+@media only screen and (max-width: 600px) {
+  aside {
+    display: none
+  }
+}
