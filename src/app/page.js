@@ -8,7 +8,7 @@ export default function Home() {
     <div className="relative main-container w-[100%] h-screen">
         <aside></aside>
         <main>
-            <header className="z-20 max-sm:left-0 fixed top-0 right-0 left-[16em] bottom-[auto] px-3 py-[1.4em] grid place-items-center">
+            <header className="z-20 max-sm:left-0 absolute top-0 right-0 left-[16em] bottom-[auto] px-3 py-[1.4em] grid place-items-center">
                 <div>App Logo</div>
             </header>
             <div class="z-0 chat-container">example</div>
