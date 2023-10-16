@@ -1,5 +1,5 @@
 export const dynamic = "force-dynamic";
-import Image from next/image
+import Image from "next/image"
 import "custom-event-polyfill"
 
 
