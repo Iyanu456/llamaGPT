@@ -1,7 +1,7 @@
 "use client"
 export const dynamic = "force-dynamic";
 import { useState } from "react";
-import Image from "next/image"
+import Image from "next/image"z
 
 
 export default function Home() {
@@ -24,6 +24,7 @@ export default function Home() {
 	        </main>
 	        <nav className="absolute grid place-items-center top-auto bottom-0 right-0 left-[18em] h-[6.4em]">gggg</nav>
 	    </div>
+	    
 	    <div class="mobile-main-container mobile" >
         <header>
             <h3>Finsocial</h3>

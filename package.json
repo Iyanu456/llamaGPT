@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mui/base": "^5.0.0-beta.19",
     "@teamhanko/hanko-elements": "^0.8.4",
     "@teamhanko/hanko-frontend-sdk": "^0.8.3",
     "cors": "^2.8.5",
