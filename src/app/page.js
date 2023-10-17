@@ -1,7 +1,9 @@
 "use client"
 export const dynamic = "force-dynamic";
 import { useState } from "react";
-import Image from "next/image"z
+import Image from "next/image"
+import MaxHeightTextarea from './components/Textarea';
+
 
 
 export default function Home() {
@@ -22,7 +24,9 @@ export default function Home() {
 	               </div>
 	            </div>
 	        </main>
-	        <nav className="absolute grid place-items-center top-auto bottom-0 right-0 left-[18em] h-[6.4em]">gggg</nav>
+	        <nav className="absolute grid place-items-center top-auto bottom-0 right-0 left-[18em] h-[6.4em]">
+	        	<MaxHeightTextarea />
+	        </nav>
 	    </div>
 	    
 	    <div class="mobile-main-container mobile" >
