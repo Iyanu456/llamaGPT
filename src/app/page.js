@@ -11,25 +11,25 @@ export default function Home() {
 
   return (
   	<>
-	    <div className="relative top-0 bottom-0 w-[100%] h-[100svh] main-container web">
+	    <div className="relative top-0 bottom-0 w-[100%] h-[100svh] main-container">
 	        <aside className="px-[1.5em] py-[2em]">
 	            <div className="pl-[1.6em]"></div>
 	        </aside>
 	        <main className="relative">
 	            <div className="grid w-[100%] pt-[10em]">
-	                <header className="w-[100%] fixed top-0 bottom-auto right-0 left-[18em] h-[3em]">
+	                <header className="w-[100%] fixed top-0 bottom-auto right-0 sm-w:left-0 left-[18em] h-[3em]">
 	                </header>
 	                
 	                <div class="chat-grp">
 	               </div>
 	            </div>
 	        </main>
-	        <nav className="absolute grid place-items-center top-auto bottom-0 right-0 left-[18em] h-[6.4em]">
+	        <nav className="absolute grid place-items-center top-auto bottom-0 right-0 sm-w:left-0 left-[18em]">
 	        	<MaxHeightTextarea />
 	        </nav>
 	    </div>
 	    
-	    <div class="mobile-main-container mobile" >
+	    <div class="mobile-main-container web" >
         <header>
             <h3>Finsocial</h3>
         </header>
@@ -39,7 +39,7 @@ export default function Home() {
             </div>
         </main>
         <nav>
-        	gggg
+        	<MaxHeightTextarea />
         </nav>
     </div>
     </>
