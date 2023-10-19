@@ -1,7 +1,7 @@
 const { NextResponse, NextRequest } = require("next/server");
 const { jwtVerify, createRemoteJWKSet } = require("jose");
 
-const hankoApiUrl = process.env.NEXT_PUBLIC_HANKO_API_URL;
+const hankoApiUrl = 'https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io';
 
 async function middleware(req) {
   const hanko = req.cookies.get("hanko")?.value;
