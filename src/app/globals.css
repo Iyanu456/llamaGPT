@@ -91,7 +91,7 @@ hanko-profile {
 .hanko_input{
   /*display: none;*/
   border: 1px solid #ccc !important;
-  padding: 1.2em 0.8em !important;
+  padding: 1.4em 0.8em !important;
   font-size: 1rem !important;
   width: 100%;
   border-radius: 4px !important;
@@ -113,7 +113,7 @@ hanko-profile {
   border-radius: 4px !important;
   border: none !important;
   height: fit-content !important;
-  padding: 0.6em 0.8em !important;
+  padding: 0.8em 0.8em !important;
   background: black !important;
 }
 .hanko_primary:hover {
@@ -127,13 +127,126 @@ hanko-profile {
 }
 
 .hanko_loadingSpinnerWrapperIcon {
-  margin: 0.5em 0.8em !important;
+  padding: 0.5em 0.8em !important;
 }
 .hanko_link {
   color: black !important;
   font-size: 0.86em !important;
 }
-@media only screen and (max-width: 480px) {
+
+header {
+  background-color: rgb(254, 254, 254);
+  border-bottom: 1.5px solid #ccc;
+
+}
+
+.input-grp {
+
+}
+
+.main-grp {
+  display: flex;
+  flex-wrap: nowrap;
+  /*background-color: #6c4343;*/
+}
+
+.chat-grp {
+  width: 100%;
+  /*background-color: #fddf97;*/
+}
+
+aside {
+  width: 16em;
+  background-color: rgb(250, 250, 250);
+  border-right: 1.5px solid #ccc;
+}
+
+.mobile {
+  display: none;
+}
+
+
+/* Track (the background of the scrollbar) */
+::-webkit-scrollbar {
+  padding-top: 0.2em;
+  width: 8px; /* Width of the scrollbar */
+}
+
+/* Thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: rgb(200, 200, 200); /* Color of the thumb */
+  border-radius: 5px; /* Rounded corners for the thumb */
+}
+
+/* Track when the mouse is hovering over it */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Button (the arrows or buttons at the ends of the scrollbar) */
+::-webkit-scrollbar-button {
+  display: none; /* Hide the scrollbar buttons */
+}
+
+/* Track when the scrollbar is in its "decrement" state */
+::-webkit-scrollbar-track-piece:start {
+  background: transparent; /* Color at the beginning of the scrollbar track */
+}
+
+/* Track when the scrollbar is in its "increment" state */
+::-webkit-scrollbar-track-piece:end {
+  background: transparent; /* Color at the end of the scrollbar track */
+}
+
+.user, .ai {
+    font-family: 'Jost';
+    width: 80%;
+    display: grid;
+    grid-template-columns: 30px auto;
+    gap: 1em;
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    height: fit-content;
+    
+}
+
+.user > p, .ai > p {
+    /*font-family: 'Jost';*/
+    font-size: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: fit-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.ai {
+    background-color: rgb(251, 251, 251);
+}
+
+
+.user-icon, .ai-icon {
+    /*font-size: 0.8em;*/
+    display: grid;
+    place-items: center;
+    margin: 0 0 auto 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(201, 111, 0);
+}
+
+.ai-icon {
+    background-color: rgb(107, 0, 107);
+}
+
+
+
+@media only screen and (max-width: 680px) {
   .hanko_container {
     box-sizing: border-box !important;
     padding: 1em !important;
@@ -142,125 +255,27 @@ hanko-profile {
   .hanko_content {
     width: 80vw !important;
   }
-}
-
-
-* {
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-    text-decoration: none;
-    outline: none;
-}
-
-.main-container {
-    display: grid;
-    grid-template-columns: 18em auto;
-}
-.flex {
-  display: flex;
-}
-.gap-1 {
-  gap: 1em;
-}
-a {
-    color: inherit;
-}
-.icon {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-aside {
-    background-color: rgb(248, 248, 248);
-    border-right: 1px solid rgb(216, 216, 216);
-}
-
-.mobile {
-    display: none;
-}
-main {
-  overflow-y: scroll;
-}
-
-header {
-  background-color: rgb(255, 255, 255);
-  border-bottom: 1px solid rgb(216, 216, 216);
-}
-
-header > h2 {
-  padding: 1em;
-  border-bottom: 1px solid rgb(216, 216, 216);
-}
-
-nav {
-    width: 100%;
-    height: fit-content;
-    padding: 1.2em 1em;
-    border-top: 1px solid rgb(219, 219, 219);
-    background-color: rgb(248, 248, 248);  
-  }
-
-@media only screen and (max-width: 640px) {
-	.main-container {
-		display: block;
-	}
-    .web {
-        display: none;
-    }
-    .mobile {
-        display: block;
-    }
-  
-
   aside {
     display: none;
   }
-  .mobile-main-container {
-    position: relative;
+  .main-grp {
+    display: block;
     width: 100%;
-    height: 100svh;
+  }
+  .chat-grp {
+    height: inherit;
     overflow-y: scroll;
   }
-
-  header {
-    position: absolute;
-    top: 0;
-    bottom: auto;
+  .mobile {
+    display: block;
+  }
+  .input-grp, header {
     width: 100%;
-    display: flex;
-    padding: 1.6em 2.2em;
-    border-bottom: 1px solid rgb(219, 219, 219);
-    background: white;
-    z-index: 20;
-  }
-
-  .main-mobile{
-    position: relative;
-    top: 0;
-    right: 0;
     left: 0;
-    height: 100svh;
-    padding: 6em 1.2em;
-    bottom: auto;
-  }
-  nav {
-    position: absolute;
-    top: auto;
-    bottom: 0;
     right: 0;
-    left: 0;
-    display: grid;
-    padding: 1.4em 1.2em;
-    place-items: center;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    border-top: 1px solid rgb(219, 219, 219);
-    background-color: white;
   }
-  nav > div {
-    margin: auto;
-    cursor: pointer;
+  .input-grp {
+    background-color: rgb(253, 253, 253);
+    border-top: 1.5px solid #ccc;
   }
 }
-

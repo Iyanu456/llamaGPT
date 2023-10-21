@@ -1,47 +1,35 @@
 "use client"
 export const dynamic = "force-dynamic";
-import { useState } from "react";
+//import { useState } from "react";
 import Image from "next/image"
 import MaxHeightTextarea from './components/Textarea';
 
 
 
 export default function Home() {
-  const [banner, setBanner] = useState(true);
+  //const [banner, setBanner] = useState(true);
 
   return (
   	<>
-	    <div className="relative top-0 bottom-0 w-[100%] h-[100svh] main-container">
-	        <aside className="px-[1.5em] py-[2em]">
-	            <div className="pl-[1.6em]"></div>
-	        </aside>
-	        <main className="relative">
-	            <div className="grid w-[100%] pt-[10em]">
-	                <header className="w-[100%] fixed top-0 bottom-auto right-0 sm-w:left-0 left-[18em] h-[3em]">
-	                </header>
-	                
-	                <div class="chat-grp">
-	               </div>
-	            </div>
-	        </main>
-	        <nav className="absolute grid place-items-center top-auto bottom-0 right-0 sm-w:left-0 left-[18em]">
-	        	<MaxHeightTextarea />
-	        </nav>
-	    </div>
-	    
-	    <div class="mobile-main-container web" >
-        <header>
-            <h3>Finsocial</h3>
-        </header>
-        <main class="main-mobile">
-            <div>
-                <div class="post-grp"></div>
-            </div>
-        </main>
-        <nav>
-        	<MaxHeightTextarea />
-        </nav>
-    </div>
+	<div className="relative">
+	<header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]"></header>
+		<div className="main-grp h-[100%] ">
+			<aside className="fixed top-0 bottom-0 right-auto left-0"></aside>
+				<div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
+					<div className="user" key="123">
+                        <div className="user-icon">
+                            u
+                        </div>
+                        <p>
+                            Hello
+                        </p> 
+                    </div>
+				</div>
+		</div>
+		<div className="grid place-items-center fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
+			<MaxHeightTextarea />
+		</div>
+	</div>
     </>
 
   )
