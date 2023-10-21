@@ -1,17 +1,20 @@
 "use client";
  
+ export const dynamic = "force-dynamic";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Hanko } from "@teamhanko/hanko-elements";
  
-const hankoApi = `https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io`;
- 
-export function LogoutBtn() {
+//const hankoApi = process.env.NEXT_PUBLIC_HANKO_API_URL;
+ const hankoApi = 'https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io'
+
+
+export default function LogoutBtn() {
   const router = useRouter();
   const [hanko, setHanko] = useState();
  
   useEffect(() => {
-    import("@teamhanko/hanko-frontend-sdk").then(({ Hanko }) =>
+    import("@teamhanko/hanko-elements").then(({ Hanko }) =>
       setHanko(new Hanko(hankoApi ?? ""))
     );
   }, []);
