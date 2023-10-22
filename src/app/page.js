@@ -27,13 +27,14 @@ export default function Home() {
                     </div>
 				</div>
 		</div>
-		<div className="flex justify-center items-center fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
-			<div className="flex w-[inherit]"><MaxHeightTextarea />
-			<Image src={sendIcon} className="-ml-[3em]" alt="send button" /></div>
-		</div>
+		<form className="fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
+				<MaxHeightTextarea />
+				<button className="grid place-items-center h-[inherit] w-[3.8em]">
+					<Image src={sendIcon}  alt="send button " />
+				</button>
+		</form>
 	</div>
     </>
-
   )
 }
 

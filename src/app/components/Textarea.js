@@ -14,7 +14,7 @@ export default function MaxHeightTextarea() {
   }
   return (
     <TextareaAutosize
-      className="px-[1.2em] py-[1em] w-[80%] max-[680px]:w-[100%]"
+      className="px-[1.2em] py-[1em] w-[70%] max-[680px]:w-[80%]"
       style={customStyle}
       maxRows={4}
       aria-label="maximum height"
