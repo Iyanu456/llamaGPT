@@ -6,14 +6,19 @@ import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 export default function MaxHeightTextarea() {
 
   let customStyle = {
-	  width: "100%",
+	  border: "1.5px solid #ccc",
+    outline: "none",
+    borderRadius: "10px",
+    boxShadow: "rgba(180, 180, 180, 0.09)4px 3px 12px 15px",
+    resize: "none",
   }
   return (
     <TextareaAutosize
-      className="px-3 py-2 w-[100%]"
+      className="px-[1.2em] py-[1em] w-[80%]"
+      style={customStyle}
       maxRows={4}
       aria-label="maximum height"
-      placeholder="Maximum 4 rows"
+      placeholder="Ask me anything!"
     />
   );
 }

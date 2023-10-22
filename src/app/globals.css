@@ -91,7 +91,7 @@ hanko-profile {
 .hanko_input{
   /*display: none;*/
   border: 1px solid #ccc !important;
-  padding: 1.2em 0.8em !important;
+  padding: 1.4em 0.8em !important;
   font-size: 1rem !important;
   width: 100%;
   border-radius: 4px !important;
@@ -113,7 +113,7 @@ hanko-profile {
   border-radius: 4px !important;
   border: none !important;
   height: fit-content !important;
-  padding: 0.6em 0.8em !important;
+  padding: 0.8em 0.8em !important;
   background: black !important;
 }
 .hanko_primary:hover {
@@ -127,7 +127,7 @@ hanko-profile {
 }
 
 .hanko_loadingSpinnerWrapperIcon {
-  margin: 0.5em 0.8em !important;
+  padding: 0.5em 0.8em !important;
 }
 .hanko_link {
   color: black !important;
@@ -135,27 +135,31 @@ hanko-profile {
 }
 
 header {
-  background-color: green;
+  background-color: rgb(254, 254, 254);
+  border-bottom: 1.5px solid #ccc;
+
 }
 
-.text-input-grp {
-  background-color: #007bff;
+.input-grp {
+  
+
 }
 
 .main-grp {
   display: flex;
   flex-wrap: nowrap;
-  background-color: #6c4343;
+  /*background-color: #6c4343;*/
 }
 
 .chat-grp {
   width: 100%;
-  background-color: #fddf97;
+  /*background-color: #fddf97;*/
 }
 
 aside {
   width: 16em;
-  background-color: yellow;
+  background-color: rgb(250, 250, 250);
+  border-right: 1.5px solid #ccc;
 }
 
 .mobile {
@@ -184,5 +188,14 @@ aside {
   }
   .mobile {
     display: block;
+  }
+  .input-grp, header {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+  .input-grp {
+    background-color: rgb(253, 253, 253);
+    border-top: 1.5px solid #ccc;
   }
 }
