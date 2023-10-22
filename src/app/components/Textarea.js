@@ -9,7 +9,7 @@ export default function MaxHeightTextarea() {
 	  border: "1.2px solid #ccc",
     outline: "none",
     borderRadius: "10px",
-    boxShadow: "rgba(180, 180, 180, 0.09)4px 3px 12px 15px",
+    boxShadow: "rgba(180, 180, 180, 0.11)4px 3px 12px 15px",
     resize: "none",
   }
   return (
