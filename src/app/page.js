@@ -29,7 +29,7 @@ export default function Home() {
 		</div>
 		<form className="fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
 				<MaxHeightTextarea />
-				<button className="grid place-items-center h-[inherit] w-[3.8em]">
+				<button className="grid place-items-center h-[3.8em] rounded w-[3.8em]" onClick={(e) => {e.preventDefault()}}>
 					<Image src={sendIcon}  alt="send button " />
 				</button>
 		</form>
