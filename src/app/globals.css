@@ -277,5 +277,7 @@ aside {
   .input-grp {
     background-color: rgb(253, 253, 253);
     border-top: 1.2px solid #ccc;
+    padding-left: 1em;
+    padding-right: 1em;
   }
 }
