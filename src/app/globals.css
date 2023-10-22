@@ -198,6 +198,53 @@ aside {
   background: transparent; /* Color at the end of the scrollbar track */
 }
 
+.user, .ai {
+    font-family: 'Jost';
+    width: 80%;
+    display: grid;
+    grid-template-columns: 30px auto;
+    gap: 1em;
+    padding-top: 1.4em;
+    padding-bottom: 1.4em;
+    padding-left: 1.8em;
+    padding-right: 1.8em;
+    height: fit-content;
+    
+}
+
+.user > p, .ai > p {
+    /*font-family: 'Jost';*/
+    font-size: 1em;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 100%;
+    height: fit-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+.ai {
+    background-color: rgb(251, 251, 251);
+}
+
+
+.user-icon, .ai-icon {
+    /*font-size: 0.8em;*/
+    display: grid;
+    place-items: center;
+    margin: 0 0 auto 0;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    color: white;
+    background-color: rgb(201, 111, 0);
+}
+
+.ai-icon {
+    background-color: rgb(107, 0, 107);
+}
+
+
 
 @media only screen and (max-width: 680px) {
   .hanko_container {

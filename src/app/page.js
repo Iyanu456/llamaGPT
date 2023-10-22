@@ -16,15 +16,14 @@ export default function Home() {
 		<div className="main-grp h-[100%] ">
 			<aside className="fixed top-0 bottom-0 right-auto left-0"></aside>
 				<div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
-					<p>hdhdhdhd</p>
+					<div className="user" key="123">
+                        <div className="user-icon">
+                            u
+                        </div>
+                        <p>
+                            Hello
+                        </p> 
+                    </div>
 				</div>
 		</div>
 		<div className="grid place-items-center fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
