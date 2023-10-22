@@ -136,7 +136,7 @@ hanko-profile {
 
 header {
   background-color: rgb(254, 254, 254);
-  border-bottom: 1.5px solid #ccc;
+  border-bottom: 1.2px solid #ccc;
 
 }
 
@@ -276,6 +276,6 @@ aside {
   }
   .input-grp {
     background-color: rgb(253, 253, 253);
-    border-top: 1.5px solid #ccc;
+    border-top: 1.2px solid #ccc;
   }
 }

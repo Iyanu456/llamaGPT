@@ -26,7 +26,7 @@ export default function Home() {
                     </div>
 				</div>
 		</div>
-		<div className="grid place-items-center fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
+		<div className="grid place-items-center fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] max-[680px]:px-[1em] input-grp">
 			<MaxHeightTextarea />
 		</div>
 	</div>
