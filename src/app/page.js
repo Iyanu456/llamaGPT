@@ -18,9 +18,15 @@ export default function Home() {
 			<aside className="fixed top-0 bottom-0 right-auto left-0"></aside>
 				<div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
 					{banner && 
-						<div className="grid place-items-center">
+						<div className="grid place-items-center px-[1.4em]">
 							<h1 className="heading mt-[2em]"><b>LlamaGPT</b></h1>
-						</div>}
+							<div className="example-group mt-[3em]">
+								<div>write an email from bullet lists</div>
+                            	<div>code a snake game</div>
+                            	<div>Assist in a task</div>
+                            </div>
+						</div>
+					}
 				</div>
 		</div>
 		<form className="fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">

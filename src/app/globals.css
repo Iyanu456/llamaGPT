@@ -250,8 +250,49 @@ aside {
     background-color: rgb(107, 0, 107);
 }
 
+.example-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    place-items: center;
+}
+
+.example-group > div {
+    /*font-size: 'Jost';|*/
+    display: grid;
+    place-items: center;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 0.8em 1.2em;
+    height: 100%;
+    background-color: rgb(253, 253, 253);
+    color: rgb(70, 70, 70);
+    width: 100%;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+    /*box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;*/
+}
+
+.example-group > div:hover {
+    box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;
+    border: 1px solid #318CE7;
+}
 
 
+
+@media only screen and (max-width: 800px) {
+  .example-group {
+        padding: 1em 1.2em;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+    }
+    .example-group > div {
+        height: fit-content;
+    }
+}
 
 @media only screen and (max-width: 680px) {
   .hanko_container {
