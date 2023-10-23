@@ -20,7 +20,7 @@ export default function Home() {
 					{banner && 
 						<div className="grid place-items-center px-[1.4em]">
 							<h1 className="heading mt-[2em]"><b>LlamaGPT</b></h1>
-							<div className="example-group mt-[3em]">
+							<div className="example-group mt-[5em]">
 								<div>write an email from bullet lists</div>
                             	<div>code a snake game</div>
                             	<div>Assist in a task</div>
