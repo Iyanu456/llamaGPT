@@ -148,7 +148,6 @@ header {
 
 .input-grp > button {
   background: black;
-  border-radius: 10px;
 }
 
 .main-grp {
@@ -287,5 +286,11 @@ aside {
     border-top: 1.2px solid #ccc;
     padding-left: 0.6em;
     padding-right: 0.6em;
+    padding-top: 1.2em;
+  }
+  .user, .ai {
+    width: 100%;
+    padding-left: 1em;
+    padding-right: 0.8em;
   }
 }

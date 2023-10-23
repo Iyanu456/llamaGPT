@@ -1,6 +1,6 @@
 "use client"
 export const dynamic = "force-dynamic";
-//import { useState } from "react";
+import { useState } from "react";
 import Image from "next/image"
 import sendIcon from "./assets/icons/send-2.svg"
 import MaxHeightTextarea from './components/Textarea';
@@ -8,7 +8,7 @@ import MaxHeightTextarea from './components/Textarea';
 
 
 export default function Home() {
-  //const [banner, setBanner] = useState(true);
+  const [banner, setBanner] = useState(true);
 
   return (
   	<>
@@ -17,19 +17,18 @@ export default function Home() {
 		<div className="main-grp h-[100%] ">
 			<aside className="fixed top-0 bottom-0 right-auto left-0"></aside>
 				<div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
-					<div className="user" key="124">
-                        <div className="user-icon">
-                            u
-                        </div>
-                        <p>
-                            Hello
-                        </p> 
-                    </div>
+					{banner && 
+						<div className="grid place-items-center">
+							<h1 className="heading mt-[2em]"><b>LlamaGPT</b></h1>
+						</div>}
 				</div>
 		</div>
 		<form className="fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
 				<MaxHeightTextarea />
-				<button className="grid place-items-center h-[3.8em] rounded w-[3.8em]" onClick={(e) => {e.preventDefault()}}>
+				<button className="grid place-items-center h-[3.6em] max-[680px]:h-[3em] max-[680px]:w-[3em] mt-auto mb-0 rounded-full w-[3.6em]" onClick={(e) => {
+					e.preventDefault();
+					banner ? setBanner(false) : null;
+				}}>
 					<Image src={sendIcon}  alt="send button " />
 				</button>
 		</form>
