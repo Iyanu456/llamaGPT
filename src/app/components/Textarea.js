@@ -6,7 +6,7 @@ import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 export default function MaxHeightTextarea() {
 
   let customStyle = {
-	  border: "1.2px solid #ccc",
+	  border: "1.4px solid #ccc",
     outline: "none",
     borderRadius: "10px",
     boxShadow: "rgba(180, 180, 180, 0.11)4px 3px 12px 15px",

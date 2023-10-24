@@ -15,7 +15,13 @@ export default function Home() {
 	<div className="relative">
 	<header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]"></header>
 		<div className="main-grp h-[100%] ">
-			<aside className="fixed top-0 bottom-0 right-auto left-0"></aside>
+			<aside className="fixed top-0 bottom-0 right-auto left-0 h-[100%] px-[1em]">
+				<button className="grid place-items-center px-[1.4em] py-[0.6em] mt-[3em] w-[100%] new-chat-button">New Chat</button>
+				<div className="absolute flex top-auto bottom-[2em] gap-[1em] px-[1.4em] w-[100%]">
+					<div className="grid place-items-center h-[35px] w-[35px] rounded-full profile-circle ml-0 my-auto">I</div>
+					<h3 className="my-auto text-white">Iyanu</h3>
+				</div>
+			</aside>
 				<div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
 					{banner && 
 						<div className="grid place-items-center px-[1.4em]">
