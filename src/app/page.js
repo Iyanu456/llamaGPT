@@ -10,6 +10,7 @@ import Modal from "./components/Modal"
 export default function Home() {
   const [banner, setBanner] = useState(true);
   const [open, setOpen] = useState(false);
+  const [sidebar, setSidebar] = useState(false)
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -19,10 +20,10 @@ export default function Home() {
       { open && <Modal handleClick={handleClose}/>}
       <div className="relative">
         <header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]">
-          <Image src={menuIcon} alt="show menu button" className="py-auto ml-[1em] mr-auto mobile"/>
+          <Image onClick={() => setSidebar(true) }src={menuIcon} alt="show menu button" className="py-auto ml-[1em] mr-auto mobile menu-btn"/>
         </header>
         <div className="main-grp h-[100%] ">
-          <Sidebar onLogout={() => {
+          <Sidebar sidebarClass={`sidebar ${sidebar ? "open" : null}`} onLogout={() => {
             console.log("clicked")
             setOpen(true)}} onProfile={handleOpen} />
           <div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
