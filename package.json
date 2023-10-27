@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@mui/base": "^5.0.0-beta.19",
+    "@mui/material": "^5.14.15",
     "@mui/system": "^5.14.13",
     "@teamhanko/hanko-elements": "^0.8.4",
     "@teamhanko/hanko-frontend-sdk": "^0.8.3",
+    "ai": "^2.2.17",
     "cors": "^2.8.5",
     "custom-event": "^1.0.1",
     "custom-event-polyfill": "^1.0.7",
