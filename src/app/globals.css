@@ -333,8 +333,29 @@ aside {
   box-shadow: rgba(23, 23, 23, 0.09)4px 3px 12px;
   cursor: pointer;
 }
-@media only screen and (max-width
-  border-radius: 5px;: 800px) {
+
+.btn {
+  display: grid;
+  place-items: center;
+  height: fit-content;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  border-radius: 6px;
+} 
+
+.btn-primary {
+  background-color: #0077b6;
+  color: white;
+  width: 100%;
+}
+
+.btn-outline {
+  color: #0077b6;
+  border: 1.4px solid #0077b6;
+  width: 100%;
+}
+
+@media only screen and (max-width: 800px) {
   .example-group {
         padding: 1em 1.2em;
         display: flex;
@@ -385,5 +406,8 @@ aside {
     width: 100%;
     padding-left: 1em;
     padding-right: 0.8em;
+  }
+  .modal-card {
+    max-width: 85vw;
   }
 }

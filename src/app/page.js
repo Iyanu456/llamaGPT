@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import sendIcon from "./assets/icons/send-2.svg";
+import menuIcon from "./assets/icons/menu-1.svg"
 import MaxHeightTextarea from "./components/Textarea";
 import Sidebar from "./components/Sidebar";
 import Modal from "./components/Modal"
@@ -15,9 +16,11 @@ export default function Home() {
 
   return (
     <>
-      { open && <Modal />}
+      { open && <Modal handleClick={handleClose}/>}
       <div className="relative">
-        <header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]"></header>
+        <header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]">
+          <Image src={menuIcon} alt="show menu button" className="py-auto ml-[1em] mr-auto mobile"/>
+        </header>
         <div className="main-grp h-[100%] ">
           <Sidebar onLogout={() => {
             console.log("clicked")

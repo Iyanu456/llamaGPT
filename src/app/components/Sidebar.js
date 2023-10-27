@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Image from "next/image";
 import moreIcon from "../assets/icons/more.svg";
-import logoutIcon from "../assets/icons/export-1.svg";
+import logoutIcon from "../assets/icons/logout.svg";
 import profileIcon from "../assets/icons/profile-circle.svg";
 import addIcon from "../assets/icons/add.svg";
 
@@ -32,7 +32,7 @@ export default function Sidebar(props) {
           <div className="flex gap-[1em] py-4 px-4" onClick={() => {
             props.onLogout()
             setMenuVisible(false)}}>
-            <Image src={logoutIcon} alt="logout button" className="icon rotate-90" />
+            <Image src={logoutIcon} alt="logout button" className="icon" />
             <p className="text-white my-auto">Logout</p>
           </div>
         </div>}
