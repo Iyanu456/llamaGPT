@@ -385,9 +385,6 @@ aside {
   .hanko_content {
     width: 80vw !important;
   }
-  aside {
-    display: none;
-  }
   .main-grp {
     display: block;
     width: 100%;
@@ -422,10 +419,10 @@ aside {
 
       .sidebar {
           top: 0;
-          left: -250px; /* Start with the sidebar hidden */
-          width: 250px;
+          left: -270px; /* Start with the sidebar hidden */
+          width: 270px;
           height: 100%;
-          background: #333;
+          z-index: 50;
           transition: left 0.3s ease;
         }
 
