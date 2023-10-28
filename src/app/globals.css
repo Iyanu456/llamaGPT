@@ -358,7 +358,6 @@ aside {
 }
 
 .menu-btn {
-  border: 2px solid var(--color-secondary);
   padding: 0.05em 0.2em;
   cursor: pointer;
   border-radius: 4px;

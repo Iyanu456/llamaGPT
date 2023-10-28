@@ -30,11 +30,13 @@ export default function Home() {
           <div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
             {banner && (
               <div className="grid place-items-center px-[1.4em]">
-                <div className="flex gap-[1em]">
-                  <h1 className="heading mt-[2em] my-auto">
+                <div className="flex justify-center items-center gap-[1em]  mt-[2em] ">
+                  <h1 className="heading my-auto" style={{
+                    color: "#071952",
+                  }}>
                     <b>LlamaGPT</b>
                   </h1>
-                  <Image src={Logo} alt="LlamaGPT logo" className="h-[80px] w-[80px] rounded-full my-auto" />
+                  <Image src={Logo} alt="LlamaGPT logo" className="h-[40px] w-[40px] rounded-full my-auto" />
                 </div>
                 <div className="example-group mt-[5em]">
                   <div>write an email from bullet lists</div>
