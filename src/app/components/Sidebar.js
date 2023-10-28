@@ -4,14 +4,18 @@ import moreIcon from "../assets/icons/more.svg";
 import logoutIcon from "../assets/icons/logout.svg";
 import profileIcon from "../assets/icons/profile-circle.svg";
 import addIcon from "../assets/icons/add.svg";
+import closeIcon from "../assets/icons/close.svg"
 
 export default function Sidebar(props) {
   const [menuVisible, setMenuVisible] = useState(false);
   const menuRef = useRef(null);
 
   return (
+    <>
     <aside className={`fixed top-0 bottom-0 right-auto left-0 h-[100%] px-[1em] ${props.sidebarClass}`}>
-      <button className="flex justify-center center-align gap-2 px-[1.4em] py-[0.6em] mt-[3em] w-[100%] new-chat-button"><p>New Chat</p><Image src={addIcon} alt="Add new chat button" className="icon" /></button>
+      <button className="grid place-items-center mobile mt-3 mr-0 ml-auto" onClick={() => props.setSidebar(false)}>
+      <Image src={closeIcon} alt="close sidebar button" /></button>
+      <button className="flex justify-center center-align gap-2 px-[1.4em] py-[0.6em] mt-[2em] w-[100%] new-chat-button"><p>New Chat</p><Image src={addIcon} alt="Add new chat button" className="icon" /></button>
       <div
         ref={menuRef} // Add a ref to the menu div
         onClick={() => { menuVisible ? setMenuVisible(false) : setMenuVisible(true)}}
@@ -37,5 +41,7 @@ export default function Sidebar(props) {
           </div>
         </div>}
     </aside>
+    
+    </>
   );
 }
