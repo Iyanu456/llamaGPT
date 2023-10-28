@@ -6,6 +6,7 @@ import menuIcon from "./assets/icons/menu-1.svg"
 import MaxHeightTextarea from "./components/Textarea";
 import Sidebar from "./components/Sidebar";
 import Modal from "./components/Modal"
+import Logo from "./assets/llama_logo.jpg"
 
 export default function Home() {
   const [banner, setBanner] = useState(true);
@@ -29,9 +30,12 @@ export default function Home() {
           <div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
             {banner && (
               <div className="grid place-items-center px-[1.4em]">
-                <h1 className="heading mt-[2em]">
-                  <b>LlamaGPT</b>
-                </h1>
+                <div className="flex gap-[1em]">
+                  <h1 className="heading mt-[2em] my-auto">
+                    <b>LlamaGPT</b>
+                  </h1>
+                  <Image src={Logo} alt="LlamaGPT logo" className="h-[80px] w-[80px] rounded-full my-auto" />
+                </div>
                 <div className="example-group mt-[5em]">
                   <div>write an email from bullet lists</div>
                   <div>code a snake game</div>

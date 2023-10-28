@@ -9,7 +9,7 @@ import { Hanko } from "@teamhanko/hanko-elements";
  const hankoApi = 'https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io'
 
 
-export default function LogoutBtn() {
+export default function LogoutBtn({ onLogout }) {
   const router = useRouter();
   const [hanko, setHanko] = useState();
  
@@ -20,6 +20,7 @@ export default function LogoutBtn() {
   }, []);
  
   const logout = async () => {
+    onLogout()
     try {
       await hanko?.user.logout();
       router.push("/login");
@@ -28,7 +29,8 @@ export default function LogoutBtn() {
     } catch (error) {
       console.error("Error during logout:", error);
     }
+
   };
  
-  return <button onClick={logout}>Logout</button>;
+  return <button onClick={logout} className="btn btn-primary">Logout</button>;
 }

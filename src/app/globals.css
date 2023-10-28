@@ -345,9 +345,10 @@ aside {
 } 
 
 .btn-primary {
-  background-color: #BB2525;
-  color: white;
-  width: 100%;
+  background: #ED2B2A !important;
+  color: white !important;
+  width: 100% !important;
+  font-weight: 600 !important;
 }
 
 .btn-outline {
@@ -357,12 +358,12 @@ aside {
 }
 
 .menu-btn {
-  padding: 0.3em;
-  border: 2px solid var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  padding: 0.05em 0.2em;
   cursor: pointer;
   border-radius: 4px;
-  height: 30px;
-  width: 30px;
+  height: 34px;
+  width: 34px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -420,8 +421,8 @@ aside {
 
       .sidebar {
           top: 0;
-          left: -270px; /* Start with the sidebar hidden */
-          width: 270px;
+          left: -280px; /* Start with the sidebar hidden */
+          width: 280px;
           height: 100%;
           z-index: 30;
           transition: left 0.3s ease;
