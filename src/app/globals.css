@@ -17,62 +17,64 @@ body {
   
 }
 
-hanko-auth,
-hanko-profile {
-  /* Color Scheme */
-  --color: #333333;
-  --color-shade-1: #8f9095;
-  --color-shade-2: #e5e6ef;
-
-  --brand-color: #506cf0;
-  --brand-color-shade-1: #6b84fb;
-  --brand-contrast-color: white;
-
-  --background-color: white;
-  --error-color: #e82020;
-  --link-color: #506cf0;
-
-  /* Font Styles */
-  --font-weight: 400;
-  --font-size: 16px;
-  --font-family: sans-serif;
-
-  /* Border Styles */
-  --border-radius: 8px;
-  --border-style: solid;
-  --border-width: 1px;
-
-  /* Item Styles */
-  --item-height: 34px;
-  --item-margin: 0.5rem 0;
-
-  /* Container Styles */
-  --container-padding: 30px;
-  --container-max-width: 640px;
-
-  /* Headline Styles */
-  --headline1-font-size: 24px;
-  --headline1-font-weight: 600;
-  --headline1-margin: 0 0 1rem;
-
+:root {
+  --color: #111827;
+  --color-shade-1: #d1d5db;
+  --brand-color: #111827;
+  --background-color: #ffffff;
+  --headline1-font-size: 29px;
   --headline2-font-size: 16px;
-  --headline2-font-weight: 600;
-  --headline2-margin: 1rem 0 0.5rem;
-
-  /* Divider Styles */
-  --divider-padding: 0 42px;
-  --divider-visibility: visible;
-
-  /* Link Styles */
-  --link-text-decoration: none;
-  --link-text-decoration-hover: underline;
-
-  /* Input Styles */
-  --input-min-width: 14em;
-
-  /* Button Styles */
-  --button-min-width: max-content;
+  --headline1-margin: 10px 40px;
+  --border-radius: 6px;
+  --font-size: 14px;
+  --item-height: 36px;
+  --link-color: #1c73e8;
+  --divider-padding: 0 15px;
 }
+
+hanko-auth {
+  --container-max-width: 640px;
+  --container-padding: 40px;
+}
+
+hanko-profile {
+  --container-max-width: 550px;
+  --container-padding: 30px;
+}
+
+hanko-auth::part(container),
+hanko-profile::part(container) {
+  border: solid 1px #d8dee3;
+  border-radius: 6px;
+}
+
+hanko-auth::part(headline1),
+hanko-profile::part(headline1),
+hanko-auth::part(headline2),
+hanko-profile::part(headline2) {
+  color: #1f2328;
+  line-height: 36px;
+  /*font-family: Cal Sans;*/
+}
+
+hanko-auth::part(form-item) {
+  min-width: 100%;
+}
+
+hanko-auth::part(input),
+hanko-profile::part(input) {
+  background-color: #ffffff;
+  margin-bottom: 12px;
+}
+
+hanko-auth::part(secondary-button) {
+  border-color: var(--color-shade-1);
+}
+
+hanko-auth::part(divider) {
+  margin: 24px 0;
+}
+
 
 .hanko_container {
   max-width: 640px !important;

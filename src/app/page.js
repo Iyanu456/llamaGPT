@@ -12,13 +12,14 @@ export default function Home() {
   const [banner, setBanner] = useState(true);
   const [open, setOpen] = useState(false);
   const [sidebar, setSidebar] = useState(false)
+  const [profileOpen, setProfileOpen] = useState(false)
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
 
   return (
     <>
-      { open && <Modal isOpen={open} setOpen={setOpen} />}
+      { open && <Modal isOpen={open} setOpen={setOpen} profileOpen={profileOpen} setProfileOpen={setProfileOpen} />}
       <div className="relative">
         <header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]">
           <Image onClick={() => setSidebar(true) }src={menuIcon} alt="show menu button" className="py-auto ml-[1em] mr-auto mobile menu-btn"/>
@@ -26,7 +27,11 @@ export default function Home() {
         <div className="main-grp h-[100%] ">
           <Sidebar sidebarClass={`sidebar ${sidebar ? "open" : null}`} setSidebar={setSidebar} onLogout={() => {
             console.log("clicked")
-            setOpen(true)}} onProfile={handleOpen} />
+            setOpen(true)}} onProfile={() => {
+              setProfileOpen(true)
+              handleOpen()
+
+            }} />
           <div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
             {banner && (
               <div className="grid place-items-center px-[1.4em]">
