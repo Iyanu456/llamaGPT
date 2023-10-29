@@ -6,7 +6,7 @@ import Logo from "../assets/llama_logo.jpg"
 export default function LoginPage() {
  return (
  	<div className="h-screen grid place-items-center">
-	 	<div className="grid place-items-center">
+	 	<div className="grid place-items-center w-[410px]">
 	 		<Image className="rounded-full h-[80px] w-[80px] mb-0" src={Logo} alt="logo" />
 	 		<HankoAuth />
 	 	</div>

@@ -34,9 +34,15 @@ function close() {
 
   if (isOpen) { 
     return (
+      
       <div style={darkBG} className="backdrop-blur-sm">
+      <style jsx>{`
+          .hanko_content {
+            width: 80px !important;
+          }
+      `}</style>
 
-        <div style={card} className="min-w-[260px] max-w-[380px] min-h-[170px] modal-card">
+        <div style={card} className="min-w-[300px] max-w-[760px] min-h-[170px] modal-card">
             {profileOpen && <HankoProfile/>}
             {!profileOpen && 
               <>
