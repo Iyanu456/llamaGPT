@@ -1,9 +1,19 @@
+
+
+
+
 export default function Message(props) {
+	let aiStyle = {
+		background: "rgb(251, 251, 251)"
+	}
+	let userStyle = {
+		background: "white",
+	}
 	return (
-		<div className="grid place-items-center w-[100%]">
-			<div className={props.type} key={props.key}>
-                <div className={props.iconType}>u</div>
-                 <p>{props.Message}</p> 
+		<div style={props.role === "ai" ? aiStyle : userStyle } className="grid place-items-center w-[100%] message-container">
+			<div className={props.role} key={props.id}>
+                <div className={props.iconClass}>{props.iconType}</div>
+                 <p>{props.message}</p> 
             </div>
 		</div>
 	)

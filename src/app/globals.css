@@ -6,6 +6,7 @@
 * {
 	box-sizing: border-box;
   text-decoration: none;
+  
 }
 :root {
 	--color-grey: rgb(252, 252, 252);
@@ -144,12 +145,11 @@ header {
 }
 
 .input-grp {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+    background-color: rgb(253, 253, 253);
+    border-top: 1.2px solid #ccc;
 }
 
-.input-grp > button {
+.input-grp > form > button {
   background: var(--color-secondary);
 }
 
@@ -162,6 +162,7 @@ header {
 .chat-grp {
   width: 100%;
   /*background-color: #fddf97;*/
+  overflow-y: scroll;
 }
 
 aside {
@@ -209,7 +210,6 @@ aside {
 }
 
 .user, .ai {
-    font-family: 'Jost';
     width: 80%;
     display: grid;
     grid-template-columns: 30px auto;

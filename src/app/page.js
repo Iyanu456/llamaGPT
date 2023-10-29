@@ -1,9 +1,11 @@
 "use client"
 import { useState, useEffect } from "react";
+import { useChat } from 'ai/react';
 import Image from "next/image";
 import sendIcon from "./assets/icons/send-2.svg";
 import menuIcon from "./assets/icons/menu-1.svg"
-import MaxHeightTextarea from "./components/Textarea";
+import InputField from "./components/Textarea";
+import Message from "./components/Message"
 import Sidebar from "./components/Sidebar";
 import Modal from "./components/Modal"
 import Logo from "./assets/llama_logo.jpg"
@@ -15,21 +17,11 @@ export default function Home() {
   const [profileOpen, setProfileOpen] = useState(false)
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
 
 
   return (
     <>
-      <style dangerouslySetInnerHTML={{__html: `
-          .hanko_content { 
-            max-height: 75vh;
-          }
-          .hanko_container {
-              border-radius: 10px;
-              max-height: 80vh;
-              overflow-y: scroll;
-        }
-      `}}>
-      </style>
       { open && <Modal isOpen={open} setOpen={setOpen} profileOpen={profileOpen} setProfileOpen={setProfileOpen} />}
       <div className="relative">
         <header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]">
@@ -43,7 +35,7 @@ export default function Home() {
               handleOpen()
 
             }} />
-          <div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] h-screen">
+          <div className="chat-grp min-[680px]:ml-[16em] pt-[3.2em] max-h-screen">
             {banner && (
               <div className="grid place-items-center px-[1.4em]">
                 <div className="flex justify-center items-center gap-[1em]  mt-[2em] ">
@@ -61,20 +53,24 @@ export default function Home() {
                 </div>
               </div>
             )}
+            {messages.map(message => (
+              <Message 
+              role={message.role === 'user' ? 'user' : 'ai' }
+              id={message.id}
+              iconClass={message.role === 'user' ? 'user-icon' : 'ai-icon '}
+              iconType={message.role === 'user' ? 'u' : 'ai' }
+              message={message.content}/>
+              ))}
           </div>
         </div>
-        <form className="fixed top-auto left-[16em] bottom-0 right-0 py-[2.2em] input-grp">
-          <MaxHeightTextarea />
-          <button
-            className="grid place-items-center h-[3.6em] max-[680px]:h-[3em] max-[680px]:w-[3em] mt-auto mb-0 rounded-full w-[3.6em]"
-            onClick={(e) => {
-              e.preventDefault();
-              banner ? setBanner(false) : null;
-            }}
-          >
-            <Image src={sendIcon} alt="send button " />
-          </button>
-        </form>
+        <InputField 
+        value={input}
+        onChange={handleInputChange}
+        onSubmit={handleSubmit}
+        onClick={() => {
+          console.log(messages);
+          banner ? setBanner(false) : null }}
+        />
       </div>
     </>
   );
