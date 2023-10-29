@@ -19,6 +19,17 @@ export default function Home() {
 
   return (
     <>
+      <style dangerouslySetInnerHTML={{__html: `
+          .hanko_content { 
+            max-height: 75vh;
+          }
+          .hanko_container {
+              border-radius: 10px;
+              max-height: 80vh;
+              overflow-y: scroll;
+        }
+      `}}>
+      </style>
       { open && <Modal isOpen={open} setOpen={setOpen} profileOpen={profileOpen} setProfileOpen={setProfileOpen} />}
       <div className="relative">
         <header className="grid place-items-center fixed top-0 bottom-auto min-[680px]:left-[16em] right-0 h-[3em]">

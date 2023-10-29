@@ -19,12 +19,14 @@ register("https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io", { shadow: fals
   position: "absolute",
   display: "grid",
   placeItems: "center",
+  overflowY: "hidden",
 }
 
 let card = {
   backgroundColor: "white",
   borderRadius: "10px",
   boxShadow: "0 5px 20px 0 rgba(0, 0, 0, 0.04)",
+  border: "solid 2px #d8dee3"
 }
 
 function close() {
@@ -43,7 +45,13 @@ function close() {
       `}</style>
 
         <div style={card} className="min-w-[300px] max-w-[760px] min-h-[170px] modal-card">
-            {profileOpen && <HankoProfile/>}
+            {profileOpen && 
+              <div>
+                  <button className="grid place-items-center mx-3 mr-0 ml-auto px-4 pt-4 pb-0" onClick={close}>
+                    <Image src={closeIcon} alt="close sidebar button" className="h-[20px] w-[20px]" />
+                  </button>
+                  <HankoProfile/>
+              </div>}
             {!profileOpen && 
               <>
                   <button className="grid place-items-center mx-3 mr-0 ml-auto px-4 pt-4 pb-0" onClick={close}>
