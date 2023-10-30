@@ -62,7 +62,7 @@ export default function Home() {
             {messages.map((message, index) => (
               <Message 
               role={message.role === 'user' ? 'user' : 'ai' }
-              id={message.id}
+              key={message.id}
               iconClass={message.role === 'user' ? 'user-icon' : 'ai-icon '}
               iconType={message.role === 'user' ? 'u' : 'ai' }
               message={message.content}/>
