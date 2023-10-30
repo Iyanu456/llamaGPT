@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,6 +8,7 @@
 * {
 	box-sizing: border-box;
   text-decoration: none;
+  font-family: 'Inter', 'Jost', sans-serif;
   
 }
 :root {
@@ -228,7 +231,7 @@ aside {
 }
 
 .user > p, .ai > p {
-    /*font-family: 'Jost';*/
+    font-family: 'Jost', sans-serif;
     font-size: 1em;
     margin-top: auto;
     margin-bottom: auto;
