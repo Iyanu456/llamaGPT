@@ -4,7 +4,7 @@ Welcome to LlamaGPT, an AI chatbot created for the Hanko Hackathon. LlamaGPT is 
 
 ## Project Overview
 
-The main objective of the Hanko Hackathon project is to build an application that leverages the Hanko authentication library. LlamaGPT is the result of our efforts, offering a chatbot that simulates real chat conversations. It utilizes cutting-edge AI technology to create engaging and dynamic interactions with users.
+The main objective of the Hanko Hackathon project is to build an application that leverages the Hanko authentication library. LlamaGPT is the result of my efforts, offering a chatbot that simulates real chat conversations. It utilizes cutting-edge AI technology to create engaging and dynamic interactions with users.
 
 ## Features
 
@@ -23,8 +23,17 @@ To set up LlamaGPT on your local development environment, follow these steps:
    ```bash
    git clone https://github.com/your-username/hanko-hackathon.git
 
+2. Navigate to the project directory:
 
-2. run the development server:
+   ```bash
+   cd hanko-hackathon
+   
+3. Install dependencies:
+   
+   ```bash
+   npm install
+   
+4. run the development server:
 
 ```bash
 npm run dev
@@ -44,4 +53,7 @@ Special thanks to the Hanko Hackathon for providing the opportunity to build thi
 
 ## Learn More
 For more info about how the Llama2 ai model works you can check the Replicate website https://replicate.com/collections/language-models
+
+## Contact
+If you have any questions or feedback, feel free to reach out to me at [oyerindei13@gmail.com].
 
