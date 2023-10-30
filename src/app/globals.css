@@ -11,7 +11,7 @@
 :root {
 	--color-grey: rgb(252, 252, 252);
   /*--color-primary: #0C356A;*/
-  --color-primary: black;
+  --color-primary: #141E46;
   --color-secondary: #0174BE;  
 }
 
@@ -141,6 +141,7 @@ hanko-profile::part(container) {
 header {
   background-color: rgb(254, 254, 254);
   border-bottom: 1.2px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -163,6 +164,10 @@ header {
   width: 100%;
   /*background-color: #fddf97;*/
   overflow-y: scroll;
+}
+
+.chat-grp:last-child {
+  padding-bottom: 13em
 }
 
 aside {
@@ -212,7 +217,7 @@ aside {
 .user, .ai {
     width: 80%;
     display: grid;
-    grid-template-columns: 30px auto;
+    grid-template-columns: 35px auto;
     gap: 1em;
     padding-top: 1.4em;
     padding-bottom: 1.4em;
@@ -243,8 +248,8 @@ aside {
     display: grid;
     place-items: center;
     margin: 0 0 auto 0;
-    height: 30px;
-    width: 30px;
+    height: 35px;
+    width: 35px;
     border-radius: 50%;
     color: white;
     background-color: rgb(201, 111, 0);
@@ -412,7 +417,7 @@ aside {
   }
   .user, .ai {
     width: 100%;
-    padding-left: 1em;
+    padding-left: 1.4em;
     padding-right: 0.8em;
   }
   .modal-card {

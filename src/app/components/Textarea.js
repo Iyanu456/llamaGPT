@@ -1,10 +1,35 @@
 "use client"
 import * as React from 'react';
+import  { useState, useEffect } from "react";
 import { TextareaAutosize } from '@mui/base/TextareaAutosize';
 import Image from "next/image";
 import sendIcon from "../assets/icons/send-2.svg";
 
 export default function InputField(props) {
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+   const handleResize = () => {
+    setScreenWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    // Add a window resize event listener to update the screen size
+    window.addEventListener('resize', handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  const handleKeyDown = (event) => {
+    if (screenWidth >= 450) { // Check the screen width
+      if (event.key === 'Enter' && !event.shiftKey) {
+        event.preventDefault(); // Prevent creating a new line
+        event.target.form.querySelector('button[type="submit"]').click(); // Trigger the form submit
+      }
+    }
+  };
 
   let customStyle = {
 	  border: "1.4px solid #ccc",
@@ -24,6 +49,7 @@ export default function InputField(props) {
           placeholder="Ask me anything!"
           value={props.value}
           onChange={props.onChange}
+          onKeyDown={handleKeyDown}
         />
         <button
           type="submit"

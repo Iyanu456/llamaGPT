@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useChat } from 'ai/react';
 import Image from "next/image";
 import sendIcon from "./assets/icons/send-2.svg";
@@ -18,7 +18,13 @@ export default function Home() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const lastMessageItemRef = useRef(null);
 
+   useEffect(() => {
+    if (messages.length > 0) {
+      lastMessageItemRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [messages]);
 
   return (
     <>
@@ -53,7 +59,7 @@ export default function Home() {
                 </div>
               </div>
             )}
-            {messages.map(message => (
+            {messages.map((message, index) => (
               <Message 
               role={message.role === 'user' ? 'user' : 'ai' }
               id={message.id}
@@ -61,7 +67,9 @@ export default function Home() {
               iconType={message.role === 'user' ? 'u' : 'ai' }
               message={message.content}/>
               ))}
+            <div ref={lastMessageItemRef}></div>
           </div>
+
         </div>
         <InputField 
         value={input}
