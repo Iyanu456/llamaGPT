@@ -15,9 +15,16 @@ export default function Home() {
   const [open, setOpen] = useState(false);
   const [sidebar, setSidebar] = useState(false)
   const [profileOpen, setProfileOpen] = useState(false)
+  const [error, setError] = useState(false)
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
-  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  const [lastMessage, setLastMessage] = useState(null);
+
+  const { messages, input, handleInputChange, handleSubmit, setInput } = useChat({ onError: (error) => {
+      console.log(error);
+      setError(true)
+      setInput(lastMessage)
+    } });
   const lastMessageItemRef = useRef(null);
 
    useEffect(() => {
@@ -72,12 +79,16 @@ export default function Home() {
 
         </div>
         <InputField 
+        setError={setError}
+        error={error}
         value={input}
         onChange={handleInputChange}
         onSubmit={handleSubmit}
         onClick={() => {
           console.log(messages);
-          banner ? setBanner(false) : null }}
+          banner ? setBanner(false) : null ;
+          setLastMessage(input);
+        }}
         />
       </div>
     </>

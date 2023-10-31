@@ -1,4 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -231,7 +233,7 @@ aside {
 }
 
 .user > p, .ai > p {
-    font-family: 'Jost', sans-serif;
+    /*font-family: 'Jost', sans-serif;*/
     font-size: 1em;
     margin-top: auto;
     margin-bottom: auto;
@@ -270,7 +272,7 @@ aside {
 }
 
 .example-group > div {
-    /*font-size: 'Jost';|*/
+    /*font-family: 'Jost';*/
     display: grid;
     place-items: center;
     font-weight: 500;
