@@ -9,6 +9,10 @@ import Message from "./components/Message"
 import Sidebar from "./components/Sidebar";
 import Modal from "./components/Modal"
 import Logo from "./assets/llama_logo.jpg"
+import { Hanko } from "@teamhanko/hanko-elements";
+
+const hankoApi = 'https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io';
+const hanko = new Hanko(hankoApi);
 
 export default function Home() {
   const [banner, setBanner] = useState(true);
@@ -19,6 +23,7 @@ export default function Home() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [lastMessage, setLastMessage] = useState(null);
+  const [userEmail, setUserEmail] = useState("");
 
   const { messages, input, handleInputChange, handleSubmit, setInput } = useChat({ onError: (error) => {
       console.log(error);
@@ -32,6 +37,20 @@ export default function Home() {
       lastMessageItemRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages]);
+
+   useEffect(() => {
+    async function fetchUserEmail() {
+      try {
+        const { email } = await hanko.user.getCurrent();
+        setUserEmail(email);
+      } catch (error) {
+        console.log(error);
+        // Handle any errors, e.g., user not authenticated
+      }
+    }
+
+    fetchUserEmail();
+  }, []);
 
   return (
     <>
@@ -79,6 +98,8 @@ export default function Home() {
 
         </div>
         <InputField 
+        userIcon={userEmail[0]}
+        userEmail={userEmail}
         setError={setError}
         error={error}
         setValue={setInput}

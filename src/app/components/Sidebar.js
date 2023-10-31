@@ -6,9 +6,12 @@ import profileIcon from "../assets/icons/profile-circle.svg";
 import addIcon from "../assets/icons/add.svg";
 import closeIcon from "../assets/icons/close.svg"
 
+
 export default function Sidebar(props) {
   const [menuVisible, setMenuVisible] = useState(false);
   const menuRef = useRef(null);
+
+  
 
   function handleRefreshClick() {
     window.location.reload(); // This will refresh the whole page
@@ -25,8 +28,8 @@ export default function Sidebar(props) {
         onClick={() => { menuVisible ? setMenuVisible(false) : setMenuVisible(true)}}
         className="absolute flex top-auto bottom-[2em] gap-[1em] w-[87%] right-[1.8em] left-[1.2em] profile py-3"
       >
-        <div className="grid place-items-center h-[35px] w-[35px] rounded-md profile-circle ml-3 my-auto">I</div>
-        <h3 className="my-auto text-white">Iyanu</h3>
+        <div className="grid place-items-center h-[35px] w-[35px] rounded-md profile-circle ml-3 my-auto">{props.userIcon}</div>
+        <h3 className="my-auto text-white truncate max-w-[45%]">{props.userEmail}</h3>
         <Image src={moreIcon} alt="more icon" className="icon mr-4 ml-auto" />
       </div>
       {menuVisible && 
