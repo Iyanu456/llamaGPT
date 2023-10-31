@@ -81,6 +81,7 @@ export default function Home() {
         <InputField 
         setError={setError}
         error={error}
+        setValue={setInput}
         value={input}
         onChange={handleInputChange}
         onSubmit={handleSubmit}
