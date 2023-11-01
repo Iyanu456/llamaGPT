@@ -9,10 +9,7 @@ import Message from "./components/Message"
 import Sidebar from "./components/Sidebar";
 import Modal from "./components/Modal"
 import Logo from "./assets/llama_logo.jpg"
-import { Hanko } from "@teamhanko/hanko-elements";
 
-const hankoApi = 'https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io';
-const hanko = new Hanko(hankoApi);
 
 export default function Home() {
   const [banner, setBanner] = useState(true);
@@ -22,8 +19,10 @@ export default function Home() {
   const [error, setError] = useState(false)
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [email, setEmail] = useState("")
   const [lastMessage, setLastMessage] = useState(null);
-  const [userEmail, setUserEmail] = useState("");
+  const [parentEmail, setParentEmail] = useState("");
+  
 
   const { messages, input, handleInputChange, handleSubmit, setInput } = useChat({ onError: (error) => {
       console.log(error);
@@ -32,25 +31,18 @@ export default function Home() {
     } });
   const lastMessageItemRef = useRef(null);
 
+
+  // Function to set the email in the parent component
+  const handleSetParentEmail = (email) => {
+    setParentEmail(email);
+  };
+
    useEffect(() => {
     if (messages.length > 0) {
       lastMessageItemRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages]);
 
-   useEffect(() => {
-    async function fetchUserEmail() {
-      try {
-        const { email } = await hanko.user.getCurrent();
-        setUserEmail(email);
-      } catch (error) {
-        console.log(error);
-        // Handle any errors, e.g., user not authenticated
-      }
-    }
-
-    fetchUserEmail();
-  }, []);
 
   return (
     <>
@@ -60,7 +52,11 @@ export default function Home() {
           <Image onClick={() => setSidebar(true) }src={menuIcon} alt="show menu button" className="py-auto ml-[1em] mr-auto mobile menu-btn"/>
         </header>
         <div className="main-grp h-[100%] ">
-          <Sidebar sidebarClass={`sidebar ${sidebar ? "open" : null}`} setSidebar={setSidebar} onLogout={() => {
+          <Sidebar 
+          setParentEmail={handleSetParentEmail}
+          sidebarClass={`sidebar ${sidebar ? "open" : null}`} 
+          setSidebar={setSidebar} 
+          onLogout={() => {
             console.log("clicked")
             setOpen(true)}} onProfile={() => {
               setProfileOpen(true)
@@ -90,16 +86,14 @@ export default function Home() {
               role={message.role === 'user' ? 'user' : 'ai' }
               key={message.id}
               iconClass={message.role === 'user' ? 'user-icon' : 'ai-icon '}
-              iconType={message.role === 'user' ? 'u' : 'ai' }
+              iconType={message.role === 'user' ? parentEmail[0].toUpperCase() : 'ai'}
               message={message.content}/>
               ))}
             <div ref={lastMessageItemRef}></div>
           </div>
 
         </div>
-        <InputField 
-        userIcon={userEmail[0]}
-        userEmail={userEmail}
+        <InputField
         setError={setError}
         error={error}
         setValue={setInput}

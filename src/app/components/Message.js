@@ -4,6 +4,7 @@ import aiAvatar from "../assets/icons/aiavatar.svg"
 
 
 export default function Message(props) {
+
 	let aiStyle = {
 		background: "rgb(251, 251, 251)"
 	}

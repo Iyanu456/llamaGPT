@@ -5,12 +5,31 @@ import logoutIcon from "../assets/icons/logout.svg";
 import profileIcon from "../assets/icons/profile-circle.svg";
 import addIcon from "../assets/icons/add.svg";
 import closeIcon from "../assets/icons/close.svg"
+import { Hanko } from "@teamhanko/hanko-elements";
+
+const hankoApi = 'https://80aee7d4-d409-4b1a-8581-22e849ff9323.hanko.io';
+const hanko = new Hanko(hankoApi);
 
 
 export default function Sidebar(props) {
   const [menuVisible, setMenuVisible] = useState(false);
+  const [userEmail, setUserEmail] = useState("");
   const menuRef = useRef(null);
 
+useEffect(() => {
+    async function fetchUserEmail() {
+      try {
+        const { email } = await hanko.user.getCurrent();
+        setUserEmail(email);
+        props.setParentEmail(email);
+      } catch (error) {
+        console.log(error);
+        // Handle any errors, e.g., user not authenticated
+      }
+    }
+
+    fetchUserEmail();
+  }, []);
   
 
   function handleRefreshClick() {
@@ -19,6 +38,7 @@ export default function Sidebar(props) {
 
   return (
     <>
+    {() => props.setEmail(email)}
     <aside className={`fixed top-0 bottom-0 right-auto left-0 h-[100%] px-[1em] ${props.sidebarClass}`}>
       <button className="grid place-items-center mobile mt-3 mr-0 ml-auto" onClick={() => props.setSidebar(false)}>
       <Image src={closeIcon} alt="close sidebar button" /></button>
@@ -28,8 +48,8 @@ export default function Sidebar(props) {
         onClick={() => { menuVisible ? setMenuVisible(false) : setMenuVisible(true)}}
         className="absolute flex top-auto bottom-[2em] gap-[1em] w-[87%] right-[1.8em] left-[1.2em] profile py-3"
       >
-        <div className="grid place-items-center h-[35px] w-[35px] rounded-md profile-circle ml-3 my-auto">{props.userIcon}</div>
-        <h3 className="my-auto text-white truncate max-w-[45%]">{props.userEmail}</h3>
+        <div className="grid place-items-center h-[35px] w-[35px] rounded-md profile-circle ml-3 my-auto">{userEmail ? userEmail[0].toUpperCase() : ""}</div>
+        <h3 className="my-auto text-white truncate max-w-[45%]">{userEmail}</h3>
         <Image src={moreIcon} alt="more icon" className="icon mr-4 ml-auto" />
       </div>
       {menuVisible && 
@@ -42,7 +62,9 @@ export default function Sidebar(props) {
           </div>
           <div className="flex gap-[1em] py-4 px-4" onClick={() => {
             props.onLogout()
-            setMenuVisible(false)}}>
+            setMenuVisible(false)
+            props.setEmail(email);
+          }}>
             <Image src={logoutIcon} alt="logout button" className="icon" />
             <p className="text-white my-auto">Logout</p>
           </div>
