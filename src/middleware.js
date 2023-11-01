@@ -13,7 +13,7 @@ export async function middleware(req) {
 
   try {
     const verifiedJWT = await jwtVerify(hanko || "", JWKS);
-    console.log(verifiedJWT)
+    //console.log(verifiedJWT)
     console.log("success")
   } catch (error) {
     console.log(error)
@@ -22,5 +22,5 @@ export async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/dashboard"],
+  matcher: ["/"],
 };

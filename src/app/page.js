@@ -25,7 +25,7 @@ export default function Home() {
   
 
   const { messages, input, handleInputChange, handleSubmit, setInput } = useChat({ onError: (error) => {
-      console.log(error);
+      //console.log(error);
       setError(true)
       setInput(lastMessage)
     } });
@@ -57,7 +57,7 @@ export default function Home() {
           sidebarClass={`sidebar ${sidebar ? "open" : null}`} 
           setSidebar={setSidebar} 
           onLogout={() => {
-            console.log("clicked")
+            //console.log("clicked")
             setOpen(true)}} onProfile={() => {
               setProfileOpen(true)
               handleOpen()
