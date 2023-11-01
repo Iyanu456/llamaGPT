@@ -86,7 +86,7 @@ export default function Home() {
               role={message.role === 'user' ? 'user' : 'ai' }
               key={message.id}
               iconClass={message.role === 'user' ? 'user-icon' : 'ai-icon '}
-              iconType={message.role === 'user' ? parentEmail[0].toUpperCase() : 'ai'}
+              iconType={message.role === 'user' ? parentEmail.toUpperCase() : 'ai'}
               message={message.content}/>
               ))}
             <div ref={lastMessageItemRef}></div>

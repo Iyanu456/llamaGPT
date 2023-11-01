@@ -63,7 +63,6 @@ useEffect(() => {
           <div className="flex gap-[1em] py-4 px-4" onClick={() => {
             props.onLogout()
             setMenuVisible(false)
-            props.setEmail(email);
           }}>
             <Image src={logoutIcon} alt="logout button" className="icon" />
             <p className="text-white my-auto">Logout</p>
