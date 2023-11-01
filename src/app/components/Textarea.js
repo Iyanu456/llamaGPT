@@ -49,7 +49,7 @@ export default function InputField(props) {
     boxShadow: "rgba(180, 180, 180, 0.11)4px 3px 12px"
   }
   return (
-    <div className="fixed grid place-items-center top-auto min-[680px]:left-[16em] bottom-0 right-0 ">
+    <div className="fixed grid place-items-center top-auto min-[680px]:left-[16em] bottom-0 right-0 max-[680px]:w-[100vw]">
     {props.error && <div className="grid place-items-center my-2"><button style={regenerateBtnStyle} className="px-[1.2em] py-[0.8em] mb-1" onClick={() => {
       buttonRef.current.click();
       props.setError(false);

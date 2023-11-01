@@ -3,6 +3,9 @@ import Image from "next/image";
 import aiAvatar from "../assets/icons/aiavatar.svg"
 
 
+
+import ReactMarkdown from "react-markdown";
+
 export default function Message(props) {
 
 	let aiStyle = {
@@ -17,7 +20,9 @@ export default function Message(props) {
                 {props.role === 'ai' ? 
                 <Image src={aiAvatar} alt="ai avatar" className="h-[35px] w-[35px] mt-0 mb-auto"/> :
                 <div className={props.iconClass}>{props.iconType}</div>}
-                 <p>{props.message}</p> 
+                <p>
+                 <ReactMarkdown>{props.message}</ReactMarkdown>
+                 </p> 
             </div>
 		</div>
 	)

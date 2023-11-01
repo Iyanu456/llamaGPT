@@ -376,6 +376,14 @@ aside {
   width: 34px;
 }
 
+pre {
+  background: rgb(30, 30, 30);
+  color: white;
+  padding: 1.4em;
+  border-radius: 10px;
+  margin-top: 1.2em;
+}
+
 @media only screen and (max-width: 800px) {
   .example-group {
         padding: 1em 1.2em;
