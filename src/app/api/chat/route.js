@@ -18,7 +18,7 @@ export async function POST(req) {
     stream: true,
     // The model must support streaming. See https://replicate.com/docs/streaming
     // This is the model ID for Llama 2 70b Chat
-    version: '02e509c789964a7ea8736978a43525956ef40397be9033abf9fd2badfe68c9e3',
+    version: 'f1726c9a8545e2cc051f54b55cd398351ccb145930f080d2eeea295f0d8b6abf',
     // Format the message list into the format expected by Llama 2
     // @see https://github.com/vercel/ai/blob/99cf16edf0a09405d15d3867f997c96a8da869c6/packages/core/prompts/huggingface.ts#L53C1-L78C2
     input: {
