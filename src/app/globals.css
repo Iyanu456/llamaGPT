@@ -382,6 +382,7 @@ pre {
   padding: 1.4em;
   border-radius: 10px;
   margin-top: 1.2em;
+  max-width: 70vw;
   overflow-x: scroll;
 }
 
