@@ -1,11 +1,17 @@
 import { ReplicateStream, StreamingTextResponse } from 'ai';
 import Replicate from 'replicate';
 import { experimental_buildLlama2Prompt } from 'ai/prompts';
- 
-// Create a Replicate API client (that's edge friendly!)
-const replicate = new Replicate({
-  auth: process.env.REPLICATE_API_KEY || 'r8_MikRAjUgm4dBlVjYsIf7zx8hR6Z3ZUs3tanpv',
+
+export async function getStaticProps() {
+
+ const replicate = new Replicate({
+  // Create a Replicate API client (that's edge friendly!)
+  auth: process.env.REPLICATE_API_KEY || '',
 });
+  // ...
+}
+
+
  
 // IMPORTANT! Set the runtime to edge
 export const runtime = 'edge';
