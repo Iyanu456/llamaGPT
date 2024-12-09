@@ -1,20 +1,18 @@
+// app/api/chat/route.ts
+
 import { ReplicateStream, StreamingTextResponse } from 'ai';
 import Replicate from 'replicate';
 import { experimental_buildLlama2Prompt } from 'ai/prompts';
 
+const replicate = new Replicate({
+  auth: process.env.REPLICATE_API_KEY || '',
+});
 
-
- 
-// IMPORTANT! Set the runtime to edge
 export const runtime = 'edge';
- 
-export async function POST(req) {
-  console.log("Replicate API Key:", process.env.REPLICATE_API_KEY);
-  
-  const replicate = new Replicate({
-    auth: process.env.REPLICATE_API_KEY || '',
-  });
 
+export async function POST(req) {
+ console.log(process.env.REPLICATE_API_KEY)
+ 
   const { messages } = await req.json();
 
   const response = await replicate.predictions.create({
@@ -28,4 +26,3 @@ export async function POST(req) {
   const stream = await ReplicateStream(response);
   return new StreamingTextResponse(stream);
 }
-
