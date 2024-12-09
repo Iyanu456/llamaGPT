@@ -11,6 +11,9 @@ export async function getStaticProps() {
   // ...
 }
 
+console.log("Replicate API Key:", process.env.REPLICATE_API_KEY);
+
+
 
  
 // IMPORTANT! Set the runtime to edge
