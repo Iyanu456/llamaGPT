@@ -17,7 +17,8 @@ export async function POST(req) {
 
   const response = await replicate.predictions.create({
     stream: true,
-    version: 'de18b8b68ef78f4f52c87eb7e3a0244d18b45b3c67affef2d5055ddc9c2fb678',
+    //version: 'de18b8b68ef78f4f52c87eb7e3a0244d18b45b3c67affef2d5055ddc9c2fb678',
+    mode: "meta/llama-2-7b-chat",
     input: {
       prompt: experimental_buildLlama2Prompt(messages),
     },
